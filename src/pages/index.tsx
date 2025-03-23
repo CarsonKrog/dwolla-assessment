@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import useSWR from 'swr';
 import { Box } from '@mui/material';
-// Icon for Add Customer button
-import { AddRounded } from '@mui/icons-material';
 
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Button, Stack } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+import AddUserDialog from '../components/AddUserDialog'
 
 export type Customer = {
   firstName: string;
@@ -55,7 +53,7 @@ const Home = () => {
                       <TableCell colSpan={2} className="table-cell-no-border">
                         <div className="table-header">
                           <Typography variant="h6">{data.length} Customers</Typography>
-                          <Button variant="contained" endIcon={<AddIcon />}>Add Customer</Button>
+                          <AddUserDialog />
                         </div>
                       </TableCell>
                     </TableRow>
